@@ -12,7 +12,7 @@ const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
-  const urlDogGLB = (process.env.NODE_ENV === 'production' ? 'https://craftzdog.global.ssl.fastly.net/homepage' : '') + '/dog.glb'
+  const urlDogGLB = '/apple_ii_computer.glb'
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
@@ -74,9 +74,11 @@ const VoxelDog = () => {
       loadGLTFModel(scene, urlDogGLB, {
         receiveShadow: false,
         castShadow: false
-      }).then(() => {
-        animate()
-        setLoading(false)
+      }).then((model) => {
+        model.scale.set(7, 7, 7); // Scale up the object significantly (x, y, z)
+        model.position.set(0, 1, 0); // Move the object up along the Y-axis
+        animate();
+        setLoading(false);
       })
 
       let req = null
