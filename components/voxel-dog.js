@@ -25,6 +25,7 @@ const VoxelDog = () => {
     }
   }, [])
 
+  // cai lon gi the
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     const { current: container } = refContainer
