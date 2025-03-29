@@ -747,6 +747,14 @@ const Home = () => (
 
         </p>
 
+        <Heading as="h3" variant="section-title">
+          Newsletter
+        </Heading>
+        <p>
+          Join me on a behind-the-scenes coding journey. Weekly updates on
+          projects, tutorials, and videos
+        </p>
+
         <Box align="center" my={4}>
   <Button
     as={NextLink}
