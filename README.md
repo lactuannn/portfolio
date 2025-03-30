@@ -1,6 +1,6 @@
 # Portfolio Website
 
-[tuandolac]([https://craftz.dog/](https://tuandolac.vercel.app/))
+[tuandolac](https://tuandolac.vercel.app/)
 
 A modern, responsive portfolio website built with Next.js and Chakra UI, showcasing my projects and professional work.
 
@@ -35,7 +35,7 @@ MIT License.
 
 You can create your own homepage for free without notifying me by forking this project under the following conditions:
 
-- Add a link to [my homepage](https://www.craftz.dog/)
+- Add a link to [Takuya Matsuyama's homepage](https://www.craftz.dog/)
 - Do not use the 3d voxel dog
 
 Check out [LICENSE](./LICENSE) for more detail.
