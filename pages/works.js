@@ -1,43 +1,197 @@
-import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import { 
+  Box, 
+  Container, 
+  Heading, 
+  Text, 
+  Grid,
+  useColorModeValue,
+  VStack,
+  Flex,
+  Badge
+} from '@chakra-ui/react'
+import NextLink from 'next/link'
+import Image from 'next/image'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
-import { WorkGridItem } from '../components/grid-item'
 
-import thumbNitori from '../public/images/works/nitori_eyecatch.png' // Thumbnail for Nitori
-import thumbEpass from '../public/images/works/epass_eyecatch.png' // Thumbnail for Epass
-import thumbHealthBook from '../public/images/works/healthbook_eyecatch.png' // Thumbnail for Sổ sức khỏe điện tử
-import thumbHealthBookDoctor from '../public/images/works/healthbook_doctor_eyecatch.png' // Thumbnail for Sổ sức khỏe điện tử bác sỹ
+// Thumbnails
+import thumbNitori from '../public/images/works/nitori_eyecatch.png'
+import thumbEpass from '../public/images/works/epass_eyecatch.png'
+import thumbHealthBook from '../public/images/works/healthbook_eyecatch.png'
+import thumbHealthBookDoctor from '../public/images/works/healthbook_doctor_eyecatch.png'
 
-const Works = () => (
-  <Layout title="Works">
-    <Container>
-      <Heading as="h3" fontSize={20} mb={4}>
-      The projects I have participated in.
-      </Heading>
+const Works = () => {
+  const headingColor = useColorModeValue('teal.500', 'teal.300')
+  
+  // Project data
+  const projects = [
+    {
+      id: 'nitori',
+      title: 'Nitori App',
+      thumbnail: thumbNitori,
+      description: 'A sophisticated furniture e-commerce app for iOS, providing customers with a seamless and intuitive shopping experience.',
+      tags: ['iOS', 'E-commerce', 'Mobile']
+    },
+    {
+      id: 'epass',
+      title: 'ePass',
+      thumbnail: thumbEpass,
+      description: 'A travel management platform enabling customers to easily access and track vehicle travel history and related services.',
+      tags: ['Mobile', 'Transportation', 'iOS']
+    },
+    {
+      id: 'healthbook',
+      title: 'Sổ sức khỏe điện tử',
+      thumbnail: thumbHealthBook,
+      description: 'An essential health management application helping Vietnamese citizens monitor personal health information, prevent diseases, and maintain overall wellbeing.',
+      tags: ['Healthcare', 'Mobile', 'Patient']
+    },
+    {
+      id: 'healthbook-doctor',
+      title: 'Sổ sức khỏe điện tử bác sỹ',
+      thumbnail: thumbHealthBookDoctor,
+      description: 'A specialized application for healthcare professionals that streamlines data collection, vaccination administration, and reduces congestion at medical facilities.',
+      tags: ['Healthcare', 'Professional', 'Management']
+    }
+  ]
+  
+  return (
+    <Layout title="Works">
+      <Box
+        minH="100vh"
+        pt={20}
+        pb={16}
+      >
+        <Container maxW="container.xl">
+          <VStack spacing={16} align="stretch">
+            {/* Header Section */}
+            <VStack spacing={4} textAlign="center">
+              <Heading 
+                as="h1" 
+                fontSize={{ base: '4xl', md: '5xl', lg: '6xl' }} 
+                fontWeight="bold"
+                bgGradient="linear(to-r, teal.400, cyan.500, blue.600)"
+                bgClip="text"
+                letterSpacing="tight"
+              >
+                Portfolio
+              </Heading>
+              <Text 
+                fontSize={{ base: 'lg', md: 'xl' }}
+                opacity={0.8}
+                maxW="3xl"
+                px={4}
+              >
+                Showcasing projects I've contributed to with passion and expertise
+              </Text>
+            </VStack>
 
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
-        <Section>
-          <WorkGridItem id="nitori" title="Nitori app" thumbnail={thumbNitori}>
-            A furniture e-commerce app for iOS, providing a seamless shopping experience.
-          </WorkGridItem>
-        </Section>
-        <Section>
-          <WorkGridItem id="epass" title="ePass" thumbnail={thumbEpass}>
-            With ePass, customers can easily access information related to the travel history of the vehicles they have registered for the service.
-          </WorkGridItem>
-        </Section>
-        <Section>
-          <WorkGridItem id="healthbook" title="Sổ sức khỏe điện tử" thumbnail={thumbHealthBook}>
-          The application helps Vietnamese citizens manage their personal health information, proactively prevent diseases, and take care of their health.          </WorkGridItem>
-        </Section>
-        <Section>
-          <WorkGridItem id="healthbook-doctor" title="Sổ sức khỏe điện tử bác sỹ" thumbnail={thumbHealthBookDoctor}>
-          The application is designed for doctors and healthcare workers, assisting in data collection, vaccination administration, and reducing congestion at vaccination sites.          </WorkGridItem>
-        </Section>
-      </SimpleGrid>
-    </Container>
-  </Layout>
-)
+            {/* Projects Grid */}
+            <Grid 
+              templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+              gap={10}
+            >
+              {projects.map(project => (
+                <Section key={project.id}>
+                  <ProjectCell {...project} />
+                </Section>
+              ))}
+            </Grid>
+          </VStack>
+        </Container>
+      </Box>
+    </Layout>
+  )
+}
+
+const ProjectCell = ({ id, title, thumbnail, description, tags = [], category = 'works' }) => {
+  const cellBg = useColorModeValue('white', 'gray.800')
+  const headingColor = useColorModeValue('teal.600', 'teal.300')
+  const textColor = useColorModeValue('gray.700', 'gray.300')
+  
+  return (
+    <Box 
+      position="relative"
+      borderRadius="2xl"
+      overflow="hidden"
+      boxShadow="xl"
+      transition="all 0.4s ease"
+      height="100%"
+      bg={cellBg}
+      _hover={{ 
+        transform: 'translateY(-8px)', 
+        boxShadow: 'dark-lg'
+      }}
+    >
+      {/* Image Section */}
+      <Box position="relative" width="100%" height="220px">
+        <Image
+          src={thumbnail}
+          alt={title}
+          fill
+          style={{ objectFit: "cover" }}
+          quality={95}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </Box>
+      
+      {/* Content Section */}
+      <Box p={6}>
+        <Heading 
+          as="h3" 
+          fontSize="2xl" 
+          fontWeight="bold"
+          color={headingColor}
+          mb={3}
+        >
+          {title}
+        </Heading>
+        
+        {/* Tags */}
+        <Flex mb={4} flexWrap="wrap" gap={2}>
+          {tags.map(tag => (
+            <Badge 
+              key={tag} 
+              colorScheme="teal" 
+              px={2} 
+              py={1}
+              borderRadius="md"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </Flex>
+        
+        <Text 
+          fontSize="md" 
+          color={textColor}
+          mb={5}
+          lineHeight="tall"
+        >
+          {description}
+        </Text>
+        
+        {/* View Details Link */}
+        <NextLink href={`/${category}/${id}`} passHref legacyBehavior>
+          <Box
+            as="a"
+            display="inline-block"
+            bg="teal.500"
+            color="white"
+            px={4}
+            py={2}
+            borderRadius="md"
+            fontWeight="medium"
+            _hover={{ bg: 'teal.600', textDecoration: 'none' }}
+            transition="all 0.3s ease"
+          >
+            View Details
+          </Box>
+        </NextLink>
+      </Box>
+    </Box>
+  )
+}
 
 export default Works
 export { getServerSideProps } from '../components/chakra'

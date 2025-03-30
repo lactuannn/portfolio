@@ -78,7 +78,7 @@ const Home = () => (
     variant="section-title" 
     className="text-2xl font-bold mb-4 pb-2 border-b-2 border-indigo-500 inline-block"
   >
-    About me
+    Bio
   </Heading>
   
   <div className="flex flex-col md:flex-row items-start gap-6">
@@ -537,6 +537,70 @@ const Home = () => (
           <Box w="85%" h={1} bg="teal.400" borderRadius="full"/>
         </Box>
       </Box>
+
+      <Box 
+        p={3} 
+        bg={useColorModeValue('teal.50', 'teal.900')} 
+        borderRadius="lg"
+        borderLeft="4px solid"
+        borderColor="teal.400"
+        shadow="sm"
+        transition="all 0.3s"
+        _hover={{ transform: 'translateY(-2px)', shadow: 'md' }}
+      >
+        <Text fontWeight="bold" fontSize="sm" color="teal.500" mb={1}>RxSwift</Text>
+        <Box w="100%" h={1} bg="gray.200" borderRadius="full">
+          <Box w="85%" h={1} bg="teal.400" borderRadius="full"/>
+        </Box>
+      </Box>
+
+      <Box 
+        p={3} 
+        bg={useColorModeValue('teal.50', 'teal.900')} 
+        borderRadius="lg"
+        borderLeft="4px solid"
+        borderColor="teal.400"
+        shadow="sm"
+        transition="all 0.3s"
+        _hover={{ transform: 'translateY(-2px)', shadow: 'md' }}
+      >
+        <Text fontWeight="bold" fontSize="sm" color="teal.500" mb={1}>MVVM</Text>
+        <Box w="100%" h={1} bg="gray.200" borderRadius="full">
+          <Box w="85%" h={1} bg="teal.400" borderRadius="full"/>
+        </Box>
+      </Box>
+
+      <Box 
+        p={3} 
+        bg={useColorModeValue('teal.50', 'teal.900')} 
+        borderRadius="lg"
+        borderLeft="4px solid"
+        borderColor="teal.400"
+        shadow="sm"
+        transition="all 0.3s"
+        _hover={{ transform: 'translateY(-2px)', shadow: 'md' }}
+      >
+        <Text fontWeight="bold" fontSize="sm" color="teal.500" mb={1}>MVC</Text>
+        <Box w="100%" h={1} bg="gray.200" borderRadius="full">
+          <Box w="85%" h={1} bg="teal.400" borderRadius="full"/>
+        </Box>
+      </Box>
+
+      <Box 
+        p={3} 
+        bg={useColorModeValue('teal.50', 'teal.900')} 
+        borderRadius="lg"
+        borderLeft="4px solid"
+        borderColor="teal.400"
+        shadow="sm"
+        transition="all 0.3s"
+        _hover={{ transform: 'translateY(-2px)', shadow: 'md' }}
+      >
+        <Text fontWeight="bold" fontSize="sm" color="teal.500" mb={1}>MVVM-C</Text>
+        <Box w="100%" h={1} bg="gray.200" borderRadius="full">
+          <Box w="85%" h={1} bg="teal.400" borderRadius="full"/>
+        </Box>
+      </Box>
       
       {/* Data & Storage */}
       <Box 
@@ -549,12 +613,12 @@ const Home = () => (
         transition="all 0.3s"
         _hover={{ transform: 'translateY(-2px)', shadow: 'md' }}
       >
-        <Text fontWeight="bold" fontSize="sm" color="blue.500" mb={1}>CoreData</Text>
+        <Text fontWeight="bold" fontSize="sm" color="blue.500" mb={1}>Crashlytics</Text>
         <Box w="100%" h={1} bg="gray.200" borderRadius="full">
           <Box w="88%" h={1} bg="blue.400" borderRadius="full"/>
         </Box>
       </Box>
-      
+
       <Box 
         p={3} 
         bg={useColorModeValue('blue.50', 'blue.900')} 
@@ -565,7 +629,7 @@ const Home = () => (
         transition="all 0.3s"
         _hover={{ transform: 'translateY(-2px)', shadow: 'md' }}
       >
-        <Text fontWeight="bold" fontSize="sm" color="blue.500" mb={1}>Firebase</Text>
+        <Text fontWeight="bold" fontSize="sm" color="blue.500" mb={1}>Firebase Analytics</Text>
         <Box w="100%" h={1} bg="gray.200" borderRadius="full">
           <Box w="82%" h={1} bg="blue.400" borderRadius="full"/>
         </Box>
