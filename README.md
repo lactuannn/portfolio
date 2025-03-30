@@ -1,33 +1,33 @@
-# Takuya's Homepage
+# Portfolio Website
 
-[https://www.craftz.dog/](https://www.craftz.dog/)
+[tuandolac]([https://craftz.dog/](https://tuandolac.vercel.app/))
 
-## Tutorial
+A modern, responsive portfolio website built with Next.js and Chakra UI, showcasing my projects and professional work.
 
-Watch how I built this website on YouTube:
+## Features
 
-[![YouTube thumbnail](./doc/thumb.png)](https://www.youtube.com/watch?v=bSMZgXzC9AA)
+- ⚡️ Blazing fast performance with Next.js
+- 🎨 Beautiful UI with Chakra UI components
+- 🌓 Dark/Light mode support
+- 📱 Fully responsive design
+- 🚀 Optimized image loading with Next.js Image
+- ✨ Smooth animations and transitions
 
-## Stack
+## Projects Showcase
 
-- [Next.js](https://nextjs.org/) - A React framework with hybrid static & server rendering, and route pre-fetching, etc.
-- [Chakra UI](https://chakra-ui.com/) - A simple, modular and accessible component library for React
-- [Three.js](https://threejs.org/) - 3D library for JavaScript
-- [Framer Motion](https://www.framer.com/motion/) - An animation library for React
+The portfolio highlights several key projects including:
 
-## Project structure
+- **Nitori App**: iOS e-commerce application
+- **ePass**: Travel management platform
+- **Sổ sức khỏe điện tử**: Health management application
+- **Sổ sức khỏe điện tử bác sỹ**: Healthcare professional application
 
-```
-$PROJECT_ROOT
-│   # Page files
-├── pages
-│   # React component files
-├── components
-│   # Non-react modules
-├── lib
-│   # Static files for images and 3d model file
-└── public
-```
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) - React framework
+- [Chakra UI](https://chakra-ui.com/) - Component library
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [React Icons](https://react-icons.github.io/react-icons/) - Icon library
 
 ## License
 
@@ -42,6 +42,4 @@ Check out [LICENSE](./LICENSE) for more detail.
 
 ---
 
-Looking for a Markdown note-taking app? Check out my app called Inkdrop:
-
-[![Inkdrop](https://github.com/craftzdog/dotfiles-public/raw/master/images/inkdrop.png)](https://www.inkdrop.app/)
+✨ Inspired by <a href="https://craftz.dog" target="_blank" rel="noopener noreferrer">craftz.dog</a>
